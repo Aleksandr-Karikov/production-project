@@ -20,7 +20,7 @@ export function buildLoaders({ isDev }: BuildOptions) : webpack.RuleSetRule[] {
     // if native js add babel-loaders else tsLoader
     const typescriptLoader = {
         test: /\.tsx?$/,
-        use: 'ts-loaders',
+        use: 'ts-loader',
         exclude: /node_modules/,
     };
 
@@ -28,7 +28,7 @@ export function buildLoaders({ isDev }: BuildOptions) : webpack.RuleSetRule[] {
         test: /\.(js|tsx|ts)$/,
         exclude: /node_modules/,
         use: {
-            loader: 'babel-loaders',
+            loader: 'babel-loader',
             options: {
                 presets: ['@babel/preset-env'],
                 plugins: [
