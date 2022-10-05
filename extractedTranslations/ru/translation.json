@@ -1,5 +1,7 @@
 {
   "about": "about",
+  "decrement": "decrement",
+  "increment": "increment",
   "main": "main",
   "Войти": "Войти",
   "Главная": "Главная",
