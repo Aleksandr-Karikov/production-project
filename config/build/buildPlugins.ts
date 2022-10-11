@@ -15,11 +15,13 @@ export function buildPlugins({ paths, isDev }: BuildOptions):webpack.WebpackPlug
             __IS_DEV__: JSON.stringify(isDev),
         }),
     ];
-    if (isDev) {
+    if (!isDev) {
         plugins.push(new MiniCssExtractPlugin({
             filename: 'css/[name].[contenthash:8].css',
             chunkFilename: 'css/[name].[contenthash:8].css',
         }));
+    }
+    if (isDev) {
         plugins.push(new ReactRefreshPlugin({ overlay: false }));
         plugins.push(new webpack.HotModuleReplacementPlugin());
         plugins.push(new BundleAnalyzerPlugin({ openAnalyzer: false }));
